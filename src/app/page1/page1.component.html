@@ -1,1 +1,98 @@
-<p>page1 works!</p>
+<!-- page1.component.html -->
+
+<!-- تنسيقات داخلية (يمكن نقلها لاحقًا لملف styles.css) -->
+<style>
+  /* HERO */
+  .hero { position: relative; min-height: 320px; }
+  .hero-img { max-height: 420px; width: 100%; object-fit: cover; display: block; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.45));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-title { color: #fff; font-size: 2rem; margin: 0; }
+
+  /* Cards */
+  .card-img-top { height: 220px; object-fit: cover; }
+  .img-wrap { position: relative; }
+  .img-title {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .35rem .6rem; border-radius: .5rem;
+    background: rgba(0,0,0,.35); color: #fff; font-weight: 600;
+    text-align: center; font-size: 1.1rem;
+  }
+  .card { border-radius: .75rem; }
+</style>
+
+<!-- صورة الهيرو + H2 في الوسط -->
+<div class="hero">
+  <!-- عدّل المسار حسب صورتك داخل src/assets -->
+  <img src="GzMi0tsXMAAjeVg.jpeg" class="hero-img" alt="منظر من جازان">
+  <div class="hero-overlay">
+    <h2 class="hero-title">مرحبا بكم في جازان</h2>
+  </div>
+</div>
+
+<!-- H4 أسفل الصورة (يمين) -->
+<div class="container mt-2">
+  <h4 class="text-end">وش ودك تزور اليوم</h4>
+</div>
+
+<!-- الكروت: 4 بطاقات (كل صف بطاقتان)، نفس نوع الكارد الذي زوّدتني به -->
+<div class="container py-3" dir="rtl">
+  <div class="row g-4">
+
+    <!-- كارد 1 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm" style="width: 25rem;">
+        <div class="img-wrap">
+             <a [routerLink]="'/page2'">
+          <img src="GfZfjStXwAA0unp.jpeg" class="card-img-top" alt="مواقع طبيعية">
+          <div class="img-title">مواقع طبيعية</div>
+                </a>
+        </div>
+     
+      </div>
+    </div>
+
+    <!-- كارد 2 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm" style="width: 25rem;">
+        <div class="img-wrap">
+             <a [routerLink]="'/page5'">
+          <img src="Zones-pic-on-website_Observation-Wheel.jpg" class="card-img-top" alt="الخيارات الترفيهية">
+          <div class="img-title">الخيارات الترفيهية</div>
+                </a>
+        </div>
+       
+      </div>
+    </div>
+
+    <!-- كارد 3 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm" style="width: 25rem;">
+        <div class="img-wrap">
+             <a [routerLink]="'/page3'">
+          <img src="page3/FJ1fVAsXEAMJoXx.jpeg" class="card-img-top" alt="أماكن تراثية وتاريخية">
+          <div class="img-title">أماكن تراثية وتاريخية</div>
+                </a>
+        </div>
+      
+      </div>
+    </div>
+
+    <!-- كارد 4 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm" style="width: 25rem;">
+        <div class="img-wrap">
+                <a [routerLink]="'/page4'">
+          <img src="page4/5893256405484424210_121.jpg" class="card-img-top" alt="التسوق">
+          <div class="img-title">المجمعات</div>
+                </a>    
+        </div>
+        </div>
+    </div>
+
+  </div>
+</div>
