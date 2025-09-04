@@ -1,1 +1,39 @@
-<p>page3 works!</p>
+<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let card of cards; let idx = index">
+      <div class="card h-100 shadow-sm">
+        <!-- Carousel   -->
+        <div class="carousel slide"
+             [attr.id]="'cardCarousel' + idx"
+             data-bs-ride="carousel"
+             data-bs-interval="2000"
+             data-bs-pause="hover">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let img of card.images; let i = index"
+                 [class.active]="i === 0">
+              <img [src]="img.src" class="d-block w-100 card-img-top " [alt]="img.alt" width="250" height="250">
+            </div>
+          </div>
+
+          <!--  -->
+          <button class="carousel-control-prev" type="button"
+                  [attr.data-bs-target]="'#cardCarousel' + idx" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button"
+                  [attr.data-bs-target]="'#cardCarousel' + idx" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a [href]="card.href" class="btn btn-primary">الموقع</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
