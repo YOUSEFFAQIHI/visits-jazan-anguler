@@ -1,1 +1,33 @@
-<p>nav works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid" dir="rtl">
+    <a class="navbar-brand d-flex align-items-center gap-2 wh" routerLink="/page1">
+      <img src="5891266817719126095_120.jpg" class="brand-logo" alt="Logo" width="60" height="60">
+    </a>
+
+    <div class="collapse navbar-collapse d-flex justify-content-end " id="mainNav" >
+      <ul class="navbar-nav  gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/page2" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            مواقع طبيعية
+          </a>
+        </li>
+<!--  -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/entertainment" routerLinkActive="active">
+            الخيارات الترفيهية
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/page3" routerLinkActive="active">
+            أماكن تراثية وتاريخية
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/page4" routerLinkActive="active">
+            مجمعات
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
